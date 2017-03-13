@@ -15,6 +15,12 @@ $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );
 
+$app->useEnvironmentPath(
+    realpath(__DIR__.'/../env/')
+);
+
+$app->loadEnvironmentFrom(getenv('LT_ENV') . '.env');
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
